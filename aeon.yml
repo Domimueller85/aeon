@@ -158,7 +158,7 @@ skills:
   skill-article: { enabled: true, schedule: "workflow_dispatch", var: "" } # receipts-first launch article for any skill in this instance. var: <skill-name> [--brand <handle>] [--banner]
   spend-watch: { enabled: false, schedule: "workflow_dispatch", var: "" } # cloud-cost analyst across Neon, Vercel, Railway, GitHub Actions. var: scope selector + optional arm flag
   submit-hook: { enabled: false, schedule: "workflow_dispatch", var: "" } # submit a deployed Uniswap v4 hook to the univ4-hooks registry. var: hook address; empty = latest live deploy
-  video-script: { enabled: true, schedule: "workflow_dispatch", var: "" } # receipts-first, recording-ready video script. var: <source> [--minutes N]
+  video-script: { enabled: false, schedule: "workflow_dispatch", var: "" } # receipts-first, recording-ready video script. var: <source> [--minutes N]
   weekly-aeoncard: { enabled: false, schedule: "workflow_dispatch", var: "" } # weekly token-consumption recap card (SVG) from memory/token-usage.csv. var: window + delivery control
 
   # --- Fallback (must be last) ---
