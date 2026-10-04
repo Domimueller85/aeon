@@ -10,7 +10,7 @@
     "last_error": "\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":true,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":402,\"result\":\"API Error: 402 In"
   },
   "aeon-doctor": {
-    "last_status": "failed",
+    "last_status": "dispatched",
     "last_failed": "2026-10-04T00:59:06Z",
     "total_runs": 2,
     "total_successes": 0,
@@ -18,7 +18,7 @@
     "consecutive_failures": 2,
     "success_rate": 0,
     "last_error": "\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":true,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":402,\"result\":\"API Error: 402 In",
-    "last_dispatch": "2026-10-04T00:57:46Z"
+    "last_dispatch": "2026-10-04T06:42:09Z"
   },
   "autoresearch": {
     "last_status": "dispatched",
@@ -73,7 +73,7 @@
     "consecutive_failures": 1,
     "success_rate": 0,
     "last_error": "\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":true,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":402,\"result\":\"API Error: 402 In",
-    "last_dispatch": "2026-10-04T00:57:46Z"
+    "last_dispatch": "2026-10-04T06:42:09Z"
   },
   "digest": {
     "last_status": "dispatched",
@@ -87,8 +87,8 @@
     "last_dispatch": "2026-10-04T00:57:46Z"
   },
   "search-skill": {
-    "last_dispatch": "2026-10-04T00:57:46Z",
-    "last_status": "failed",
+    "last_dispatch": "2026-10-04T06:42:09Z",
+    "last_status": "dispatched",
     "last_failed": "2026-10-04T00:58:23Z",
     "total_runs": 1,
     "total_successes": 0,
@@ -98,8 +98,8 @@
     "last_error": "\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":true,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":402,\"result\":\"API Error: 402 In"
   },
   "fetch-tweets": {
-    "last_dispatch": "2026-10-04T00:57:46Z",
-    "last_status": "failed",
+    "last_dispatch": "2026-10-04T06:42:09Z",
+    "last_status": "dispatched",
     "last_failed": "2026-10-04T00:58:40Z",
     "total_runs": 1,
     "total_successes": 0,
@@ -109,8 +109,8 @@
     "last_error": "\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":true,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":402,\"result\":\"API Error: 402 In"
   },
   "skill-health": {
-    "last_dispatch": "2026-10-04T00:57:46Z",
-    "last_status": "failed",
+    "last_dispatch": "2026-10-04T06:42:09Z",
+    "last_status": "dispatched",
     "last_failed": "2026-10-04T00:58:36Z",
     "total_runs": 1,
     "total_successes": 0,
@@ -120,8 +120,8 @@
     "last_error": "\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":true,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":402,\"result\":\"API Error: 402 In"
   },
   "self-improve": {
-    "last_dispatch": "2026-10-04T00:57:46Z",
-    "last_status": "failed",
+    "last_dispatch": "2026-10-04T06:42:09Z",
+    "last_status": "dispatched",
     "last_failed": "2026-10-04T00:58:40Z",
     "total_runs": 1,
     "total_successes": 0,
@@ -131,8 +131,8 @@
     "last_error": "\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":true,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":402,\"result\":\"API Error: 402 In"
   },
   "fleet-control": {
-    "last_dispatch": "2026-10-04T00:57:46Z",
-    "last_status": "failed",
+    "last_dispatch": "2026-10-04T06:42:09Z",
+    "last_status": "dispatched",
     "last_failed": "2026-10-04T00:59:02Z",
     "total_runs": 1,
     "total_successes": 0,
@@ -142,8 +142,8 @@
     "last_error": "\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":true,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":402,\"result\":\"API Error: 402 In"
   },
   "narrative-convergence": {
-    "last_dispatch": "2026-10-04T00:57:46Z",
-    "last_status": "failed",
+    "last_dispatch": "2026-10-04T06:42:09Z",
+    "last_status": "dispatched",
     "last_failed": "2026-10-04T00:58:47Z",
     "total_runs": 1,
     "total_successes": 0,
@@ -153,8 +153,8 @@
     "last_error": "\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":true,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":402,\"result\":\"API Error: 402 In"
   },
   "write-tweet": {
-    "last_dispatch": "2026-10-04T00:57:46Z",
-    "last_status": "failed",
+    "last_dispatch": "2026-10-04T06:42:09Z",
+    "last_status": "dispatched",
     "last_failed": "2026-10-04T00:58:53Z",
     "total_runs": 1,
     "total_successes": 0,
@@ -164,8 +164,8 @@
     "last_error": "\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":true,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":402,\"result\":\"API Error: 402 In"
   },
   "memory-flush": {
-    "last_dispatch": "2026-10-04T00:57:46Z",
-    "last_status": "failed",
+    "last_dispatch": "2026-10-04T06:42:09Z",
+    "last_status": "dispatched",
     "last_failed": "2026-10-04T00:58:56Z",
     "total_runs": 1,
     "total_successes": 0,
