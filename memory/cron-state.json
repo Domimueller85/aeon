@@ -154,8 +154,8 @@
     "last_error": "\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":true,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":402,\"result\":\"API Error: 402 In"
   },
   "write-tweet": {
-    "last_dispatch": "2026-10-04T12:52:24Z",
-    "last_status": "failed",
+    "last_dispatch": "2026-10-04T23:10:54Z",
+    "last_status": "dispatched",
     "last_failed": "2026-10-04T12:53:46Z",
     "total_runs": 3,
     "total_successes": 0,
@@ -242,8 +242,8 @@
     "last_error": "\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":true,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":402,\"result\":\"API Error: 402 In"
   },
   "vuln-tracker": {
-    "last_dispatch": "2026-10-04T20:11:15Z",
-    "last_status": "failed",
+    "last_dispatch": "2026-10-04T23:10:54Z",
+    "last_status": "dispatched",
     "last_failed": "2026-10-04T20:12:13Z",
     "total_runs": 2,
     "total_successes": 0,
