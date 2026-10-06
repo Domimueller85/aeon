@@ -265,12 +265,12 @@
   },
   "shiplog": {
     "last_dispatch": "2026-10-06T03:09:13Z",
-    "last_status": "dispatched",
-    "last_failed": "2026-10-05T23:21:45Z",
-    "total_runs": 2,
+    "last_status": "failed",
+    "last_failed": "2026-10-06T03:09:45Z",
+    "total_runs": 3,
     "total_successes": 0,
-    "total_failures": 2,
-    "consecutive_failures": 2,
+    "total_failures": 3,
+    "consecutive_failures": 3,
     "success_rate": 0,
     "last_error": "\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":true,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":402,\"result\":\"API Error: 402 In"
   },
