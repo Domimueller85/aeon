@@ -22,7 +22,7 @@
     "last_dispatch": "2026-10-05T17:35:09Z"
   },
   "autoresearch": {
-    "last_status": "failed",
+    "last_status": "dispatched",
     "last_failed": "2026-10-05T08:52:35Z",
     "total_runs": 5,
     "total_successes": 0,
@@ -30,10 +30,10 @@
     "consecutive_failures": 5,
     "success_rate": 0,
     "last_error": "\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":true,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":402,\"result\":\"API Error: 402 In",
-    "last_dispatch": "2026-10-05T08:52:05Z"
+    "last_dispatch": "2026-10-06T10:15:17Z"
   },
   "install-skill": {
-    "last_status": "failed",
+    "last_status": "dispatched",
     "last_failed": "2026-10-05T23:48:21Z",
     "total_runs": 6,
     "total_successes": 0,
@@ -41,7 +41,7 @@
     "consecutive_failures": 6,
     "success_rate": 0,
     "last_error": ":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":true,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":402,\"result\":\"API Error: 402 Ins",
-    "last_dispatch": "2026-10-05T08:52:05Z"
+    "last_dispatch": "2026-10-06T10:15:17Z"
   },
   "auto-merge": {
     "last_status": "dispatched",
@@ -66,7 +66,7 @@
     "last_dispatch": "2026-10-05T17:35:09Z"
   },
   "price-alert": {
-    "last_status": "failed",
+    "last_status": "dispatched",
     "last_failed": "2026-10-06T03:09:41Z",
     "total_runs": 7,
     "total_successes": 0,
@@ -74,7 +74,7 @@
     "consecutive_failures": 7,
     "success_rate": 0,
     "last_error": "\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":true,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":402,\"result\":\"API Error: 402 In",
-    "last_dispatch": "2026-10-06T03:09:13Z"
+    "last_dispatch": "2026-10-06T10:15:17Z"
   },
   "digest": {
     "last_status": "dispatched",
@@ -132,8 +132,8 @@
     "last_error": "\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":true,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":402,\"result\":\"API Error: 402 In"
   },
   "fleet-control": {
-    "last_dispatch": "2026-10-05T17:35:09Z",
-    "last_status": "failed",
+    "last_dispatch": "2026-10-06T10:15:17Z",
+    "last_status": "dispatched",
     "last_failed": "2026-10-05T17:36:20Z",
     "total_runs": 5,
     "total_successes": 0,
@@ -195,7 +195,7 @@
     "consecutive_failures": 2,
     "success_rate": 0,
     "last_error": "\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":true,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":402,\"result\":\"API Error: 402 In",
-    "last_dispatch": "2026-10-05T17:35:09Z"
+    "last_dispatch": "2026-10-06T10:15:17Z"
   },
   "pr-review": {
     "last_status": "dispatched",
@@ -206,7 +206,7 @@
     "consecutive_failures": 2,
     "success_rate": 0,
     "last_error": "\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":true,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":402,\"result\":\"API Error: 402 In",
-    "last_dispatch": "2026-10-05T17:35:09Z"
+    "last_dispatch": "2026-10-06T10:15:17Z"
   },
   "github-trending": {
     "last_status": "dispatched",
@@ -217,11 +217,11 @@
     "consecutive_failures": 2,
     "success_rate": 0,
     "last_error": "\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":true,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":402,\"result\":\"API Error: 402 In",
-    "last_dispatch": "2026-10-05T17:35:09Z"
+    "last_dispatch": "2026-10-06T10:15:17Z"
   },
   "bd-radar": {
-    "last_dispatch": "2026-10-05T08:52:05Z",
-    "last_status": "failed",
+    "last_dispatch": "2026-10-06T10:15:17Z",
+    "last_status": "dispatched",
     "last_failed": "2026-10-05T08:52:46Z",
     "total_runs": 4,
     "total_successes": 0,
@@ -231,8 +231,8 @@
     "last_error": "\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":true,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":402,\"result\":\"API Error: 402 In"
   },
   "heartbeat": {
-    "last_dispatch": "2026-10-05T08:52:05Z",
-    "last_status": "failed",
+    "last_dispatch": "2026-10-06T10:15:17Z",
+    "last_status": "dispatched",
     "last_failed": "2026-10-05T08:52:45Z",
     "total_runs": 4,
     "total_successes": 0,
