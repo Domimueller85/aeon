@@ -232,12 +232,12 @@
   },
   "heartbeat": {
     "last_dispatch": "2026-10-07T19:43:35Z",
-    "last_status": "dispatched",
-    "last_failed": "2026-10-07T13:55:55Z",
-    "total_runs": 6,
+    "last_status": "failed",
+    "last_failed": "2026-10-07T19:45:42Z",
+    "total_runs": 7,
     "total_successes": 0,
-    "total_failures": 6,
-    "consecutive_failures": 6,
+    "total_failures": 7,
+    "consecutive_failures": 7,
     "success_rate": 0,
     "last_error": "\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":true,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":402,\"result\":\"API Error: 402 In"
   },
