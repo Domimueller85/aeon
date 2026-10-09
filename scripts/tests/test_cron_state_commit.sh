@@ -52,7 +52,7 @@ grep -q 'Failed to commit chain state' "$TMP/chain-step.sh" \
 setup() {
   local d="$1"
   rm -rf "$d"; mkdir -p "$d"
-  git init -q --bare -b main "$d/remote.git"
+  git init -q --bare --initial-branch=main "$d/remote.git"
   git clone -q "$d/remote.git" "$d/seed" 2>/dev/null
   (
     cd "$d/seed" || exit 1
