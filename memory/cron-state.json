@@ -33,12 +33,12 @@
     "last_dispatch": "2026-10-09T09:28:25Z"
   },
   "install-skill": {
-    "last_status": "dispatched",
-    "last_failed": "2026-10-08T10:51:36Z",
-    "total_runs": 10,
+    "last_status": "failed",
+    "last_failed": "2026-10-09T09:29:06Z",
+    "total_runs": 11,
     "total_successes": 0,
-    "total_failures": 10,
-    "consecutive_failures": 10,
+    "total_failures": 11,
+    "consecutive_failures": 11,
     "success_rate": 0,
     "last_error": "\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":true,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":402,\"result\":\"API Error: 402 In",
     "last_dispatch": "2026-10-09T09:28:25Z"
