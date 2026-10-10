@@ -43,7 +43,7 @@ printf 'model: claude-sonnet-5-5\ngateway: { provider: auto }\nskills:\n  heartb
 printf '#!/usr/bin/env bash\necho "child-init $*" > "%s/child-args"\n' "$T" > "$T/tpl/aeon"
 chmod +x "$T/tpl/aeon"
 git -C "$T/tpl" init -q && git -C "$T/tpl" add -A && git -C "$T/tpl" commit -q -m template
-git clone -q --bare "$T/tpl" "$GH/aeonfun/aeon.git"
+git -c safe.bareRepository=all clone -q --bare "$T/tpl" "$GH/aeonfun/aeon.git"
 
 clone_template() {  # clone_template <dir>: a fresh `git clone` of aeonfun/aeon
   git clone -q https://github.com/aeonfun/aeon "$1"
@@ -91,9 +91,9 @@ echo OPENROUTER_API_KEY >> "$FAKE_GH_STATE/secrets-tester_aeon"
 init "$W" --yes --harness codex; rc=$?
 [ "$rc" = 0 ] && pass "--harness codex exits 0" || { bad "--harness codex exited $rc"; cat "$T/out"; }
 grep -q "OpenAI Codex CLI is connected (OPENROUTER_API_KEY)" "$T/out" && pass "codex seen as connected" || bad "codex not seen as connected"
-git --git-dir="$GH/tester/aeon.git" show main:aeon.yml | grep -q '^harness: codex' \
+git -c safe.bareRepository=all --git-dir="$GH/tester/aeon.git" show main:aeon.yml | grep -q '^harness: codex' \
   && pass "aeon.yml harness: codex pushed to the instance" || bad "harness switch not pushed to origin"
-git --git-dir="$GH/aeonfun/aeon.git" show main:aeon.yml | grep -q '^harness:' && bad "template was pushed to" || pass "template untouched"
+git -c safe.bareRepository=all --git-dir="$GH/aeonfun/aeon.git" show main:aeon.yml | grep -q '^harness:' && bad "template was pushed to" || pass "template untouched"
 
 # --- 5. resume an interrupted switch-over ------------------------------------------
 # State after a crash mid-adopt: the instance was fetched under the temporary
@@ -143,14 +143,14 @@ init "$W" --yes --name aeon10 --dir "$T/d10/notadir"; rc=$?
 # Template copies start a FRESH history (fake-gh does the same), so pointing the
 # branch at origin is not enough: it must move to the instance's commits.
 "$HERE/fake-gh" repo create tester/aeon11 --template aeonfun/aeon --public >/dev/null
-git --git-dir="$GH/tester/aeon11.git" merge-base main "$(git --git-dir="$GH/aeonfun/aeon.git" rev-parse main)" >/dev/null 2>&1 \
+git -c safe.bareRepository=all --git-dir="$GH/tester/aeon11.git" merge-base main "$(git -c safe.bareRepository=all --git-dir="$GH/aeonfun/aeon.git" rev-parse main)" >/dev/null 2>&1 \
   && bad "fake template copy shares history with the template" || pass "template copies have fresh history"
 W="$T/w11"; clone_template "$W"
 git -C "$W" remote rename origin upstream
 git -C "$W" remote add origin https://github.com/tester/aeon11.git
 init "$W" --yes; rc=$?
 [ "$rc" = 0 ] && pass "fresh-history repair exits 0" || { bad "fresh-history repair exited $rc"; cat "$T/out"; }
-[ "$(git -C "$W" rev-parse HEAD)" = "$(git --git-dir="$GH/tester/aeon11.git" rev-parse main)" ] \
+[ "$(git -C "$W" rev-parse HEAD)" = "$(git -c safe.bareRepository=all --git-dir="$GH/tester/aeon11.git" rev-parse main)" ] \
   && pass "folder moved onto the instance's history" || bad "HEAD is still the template commit"
 [ "$(u "$W")" = "origin/main" ] && pass "and tracks origin/main" || bad "tracks $(u "$W")"
 grep -q "was still the template's history" "$T/out" && pass "history switch reported" || bad "history switch not reported"

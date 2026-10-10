@@ -22,6 +22,8 @@ bad() { echo "FAIL - $1"; fail=1; }
 
 export GIT_AUTHOR_NAME=t GIT_AUTHOR_EMAIL=t@example.com GIT_COMMITTER_NAME=t GIT_COMMITTER_EMAIL=t@example.com
 
+git_bare() { git -c safe.bareRepository=all "$@"; }
+
 # --- Extract both steps' run: bodies verbatim --------------------------------
 {
   echo 'sleep() { :; }'
@@ -52,8 +54,8 @@ grep -q 'Failed to commit chain state' "$TMP/chain-step.sh" \
 setup() {
   local d="$1"
   rm -rf "$d"; mkdir -p "$d"
-  git init -q --bare --initial-branch=main "$d/remote.git"
-  git clone -q "$d/remote.git" "$d/seed" 2>/dev/null
+  git_bare init -q --bare --initial-branch=main "$d/remote.git"
+  git_bare clone -q "$d/remote.git" "$d/seed" 2>/dev/null
   (
     cd "$d/seed" || exit 1
     git checkout -q -b main
@@ -62,8 +64,8 @@ setup() {
     printf 'a\nb\n' > notes.txt
     git add -A && git commit -qm seed && git push -q origin main
   )
-  git clone -q "$d/remote.git" "$d/run" 2>/dev/null
-  git clone -q "$d/remote.git" "$d/racer" 2>/dev/null
+  git_bare clone -q "$d/remote.git" "$d/run" 2>/dev/null
+  git_bare clone -q "$d/remote.git" "$d/racer" 2>/dev/null
 }
 
 # A concurrent run lands a cron-state update on the remote (same skill entry,
@@ -96,7 +98,7 @@ HOOK
   chmod +x "$d/run/.git/hooks/pre-push"
 }
 
-remote_state() { git -C "$1/remote.git" show main:memory/cron-state.json; }
+remote_state() { git_bare -C "$1/remote.git" show main:memory/cron-state.json; }
 
 # --- aeon.yml: push race -------------------------------------------------------
 D="$TMP/a1"; setup "$D"; arm_race_on_first_push "$D"
@@ -116,7 +118,7 @@ S=$(remote_state "$D")
 [ "$(jq -r '.digest.last_status' <<<"$S")" = failed ] && [ "$(jq -r '.racer.last_status' <<<"$S")" = success ] \
   && pass "aeon.yml: failure recorded despite a dirty tree" || { bad "aeon.yml: dirty tree blocked the failure stamp: $S"; echo "$out"; }
 grep -q 'half-edited' "$D/run/notes.txt" && pass "aeon.yml: dirty working-tree edits preserved (autostash)" || bad "aeon.yml: dirty edits lost"
-git -C "$D/remote.git" show main:notes.txt | grep -q 'half-edited' && bad "aeon.yml: dirty edit leaked into the cron commit" \
+git_bare -C "$D/remote.git" show main:notes.txt | grep -q 'half-edited' && bad "aeon.yml: dirty edit leaked into the cron commit" \
   || pass "aeon.yml: only cron-state was committed"
 
 # --- chain-runner.yml: push race ----------------------------------------------
