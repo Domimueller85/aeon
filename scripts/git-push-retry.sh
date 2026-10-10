@@ -138,8 +138,8 @@ for i in 1 2 3 4 5 6 7 8 9 10; do
   if git push -u origin HEAD 2>/dev/null; then
     echo "Pushed successfully on attempt $i"
     if [ -f scripts/audit.sh ]; then
-    bash scripts/audit.sh "git.push" "${GITHUB_REPOSITORY:-}@$(git rev-parse --abbrev-ref HEAD)" 0 "GH_GLOBAL" || true
-  fi
+      bash scripts/audit.sh "git.push" "${GITHUB_REPOSITORY:-}@$(git rev-parse --abbrev-ref HEAD)" 0 "GH_GLOBAL" || true
+    fi
     exit 0
   fi
   echo "Push attempt $i failed (ref moved), retrying in ${i}s..."
