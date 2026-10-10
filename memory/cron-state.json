@@ -134,11 +134,11 @@
   "fleet-control": {
     "last_dispatch": "2026-10-09T16:29:13Z",
     "last_status": "failed",
-    "last_failed": "2026-10-10T20:44:19Z",
-    "total_runs": 16,
+    "last_failed": "2026-10-10T23:54:07Z",
+    "total_runs": 17,
     "total_successes": 0,
-    "total_failures": 16,
-    "consecutive_failures": 16,
+    "total_failures": 17,
+    "consecutive_failures": 17,
     "success_rate": 0,
     "last_error": "\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":true,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":402,\"result\":\"API Error: 402 In"
   },
