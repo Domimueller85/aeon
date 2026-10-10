@@ -11,6 +11,8 @@ ST="$FAKE_GH_STATE"
 mkdir -p "$ST"
 printf '%s\n' "$*" >> "$ST/calls"
 
+git_bare() { git -c safe.bareRepository=all "$@"; }
+
 bare() { printf '%s/%s.git' "$ROOT" "$1"; }
 exists() { [ -d "$(bare "$1")" ]; }
 key() { printf '%s' "$1" | tr '/' '_'; }
@@ -36,12 +38,12 @@ case "${1:-} ${2:-}" in
     # commit, sharing no history with aeonfun/aeon.
     new="$(bare "$slug")"
     mkdir -p "$(dirname "$new")"
-    git init -q --bare -b main "$new"
-    git --git-dir="$new" fetch -q "$(bare aeonfun/aeon)" "main:refs/tmp/template"
-    tree="$(git --git-dir="$new" rev-parse 'refs/tmp/template^{tree}')"
-    root="$(git --git-dir="$new" commit-tree "$tree" -m "Initial commit")"
-    git --git-dir="$new" update-ref refs/heads/main "$root"
-    git --git-dir="$new" update-ref -d refs/tmp/template
+    git_bare init -q --bare -b main "$new"
+    git_bare --git-dir="$new" fetch -q "$(bare aeonfun/aeon)" "main:refs/tmp/template"
+    tree="$(git_bare --git-dir="$new" rev-parse 'refs/tmp/template^{tree}')"
+    root="$(git_bare --git-dir="$new" commit-tree "$tree" -m "Initial commit")"
+    git_bare --git-dir="$new" update-ref refs/heads/main "$root"
+    git_bare --git-dir="$new" update-ref -d refs/tmp/template
     echo "https://github.com/$slug" ;;
   "repo view")
     slug="${3:-}"
@@ -85,7 +87,7 @@ case "${1:-} ${2:-}" in
     slug="$(printf '%s' "$path" | cut -d/ -f2-3)"
     exists "$slug" || { echo "HTTP 404" >&2; exit 1; }
     case "$path" in
-      */contents/aeon.yml) git --git-dir="$(bare "$slug")" cat-file -e HEAD:aeon.yml 2>/dev/null || { echo "HTTP 404" >&2; exit 1; } ;;
+      */contents/aeon.yml) git_bare --git-dir="$(bare "$slug")" cat-file -e HEAD:aeon.yml 2>/dev/null || { echo "HTTP 404" >&2; exit 1; } ;;
       */actions/permissions) cat "$ST/perms-$(key "$slug")" 2>/dev/null || echo '{"enabled":false}' ;;
       */actions/permissions/workflow)
         cat "$ST/wf-$(key "$slug")" 2>/dev/null || echo '{"default_workflow_permissions":"read","can_approve_pull_request_reviews":false}' ;;

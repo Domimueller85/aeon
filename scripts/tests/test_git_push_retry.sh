@@ -16,9 +16,10 @@ bad() { echo "FAIL - $1"; fail=1; }
 
 export GIT_AUTHOR_NAME=t GIT_AUTHOR_EMAIL=t@example.com GIT_COMMITTER_NAME=t GIT_COMMITTER_EMAIL=t@example.com
 g() { git "$@"; }
+git_bare() { git -c safe.bareRepository=all "$@"; }
 
-git init -q --bare --initial-branch=main "$TMP/remote.git"
-g clone -q "$TMP/remote.git" "$TMP/seed" 2>/dev/null
+git_bare init -q --bare --initial-branch=main "$TMP/remote.git"
+git_bare clone -q "$TMP/remote.git" "$TMP/seed" 2>/dev/null
 (
   cd "$TMP/seed" || exit 1
   git checkout -q -b main
@@ -33,8 +34,8 @@ g clone -q "$TMP/remote.git" "$TMP/seed" 2>/dev/null
   printf 'seed report\n' > output/report.md
   g add -A && g commit -qm seed && git push -q origin main
 )
-g clone -q "$TMP/remote.git" "$TMP/up" 2>/dev/null
-g clone -q "$TMP/remote.git" "$TMP/local" 2>/dev/null
+git_bare clone -q "$TMP/remote.git" "$TMP/up" 2>/dev/null
+git_bare clone -q "$TMP/remote.git" "$TMP/local" 2>/dev/null
 
 # Upstream: another run lands first.
 (
@@ -72,7 +73,7 @@ out=$(cd "$TMP/local" && bash "$SCRIPT" 2>&1)
 rc=$?
 [ "$rc" = 0 ] && pass "push succeeded after resolving conflicts" || { bad "script exited $rc"; echo "$out"; }
 
-g clone -q "$TMP/remote.git" "$TMP/check" 2>/dev/null
+git_bare clone -q "$TMP/remote.git" "$TMP/check" 2>/dev/null
 cd "$TMP/check" || exit 1
 
 grep -q '^2026-01-02,upstream,m$' memory/token-usage.csv && grep -q '^2026-01-03,local,m$' memory/token-usage.csv \

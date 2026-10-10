@@ -32,6 +32,7 @@ bad() { fail=$((fail+1)); echo "FAIL - $1"; }
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 REAL_DATE="$(command -v date)"
+git_bare() { git -c safe.bareRepository=all "$@"; }
 
 # The step body, exactly as the workflow runs it.
 yq '.jobs.schedule.steps[] | select(.name == "Determine and dispatch scheduled skills") | .run' \
@@ -55,9 +56,9 @@ EOF
 chmod +x "$TMP/bin/"*
 
 # --- fixture repo -----------------------------------------------------------
-git init -q --bare "$TMP/origin.git"
-git -C "$TMP/origin.git" symbolic-ref HEAD refs/heads/main
-git clone -q "$TMP/origin.git" "$TMP/seed" 2>/dev/null
+git_bare init -q --bare "$TMP/origin.git"
+git_bare -C "$TMP/origin.git" symbolic-ref HEAD refs/heads/main
+git_bare clone -q "$TMP/origin.git" "$TMP/seed" 2>/dev/null
 cd "$TMP/seed" || exit 1
 git config user.name t; git config user.email t@example.com
 git checkout -q -b main
@@ -123,7 +124,7 @@ cat > memory/cron-state.json <<'EOF'
 EOF
 git add -A && git commit -qm seed && git push -q origin main 2>/dev/null
 
-git clone -q "$TMP/origin.git" "$TMP/work" 2>/dev/null
+git_bare clone -q "$TMP/origin.git" "$TMP/work" 2>/dev/null
 git -C "$TMP/work" config user.name t; git -C "$TMP/work" config user.email t@example.com
 
 # Race: another writer (a finished skill run) lands a cron-state change on
@@ -159,7 +160,7 @@ dispatched "workflow run aeon.yml -f skill=weekly-flaky" && ok "weekly skill sti
   || bad "weekly-flaky not quick-retried"
 grep -q 'skill=manual' "$TMP/gh.log" && bad "workflow_dispatch-only skill auto-retried" || ok "workflow_dispatch skill never retried"
 
-STATE="$(git -C "$TMP/origin.git" show main:memory/cron-state.json)"
+STATE="$(git_bare -C "$TMP/origin.git" show main:memory/cron-state.json)"
 NOW=2026-07-07T06:05:00Z
 [ "$(jq -r '.other.last_status' <<< "$STATE")" = "success" ] && ok "retry kept upstream's concurrent change" || bad "upstream change lost: $STATE"
 [ "$(jq -r '.digest.last_dispatch' <<< "$STATE")" = "$NOW" ] && ok "covered skill stamped (and survived the race)" || bad "digest not stamped: $(jq -c .digest <<< "$STATE")"
