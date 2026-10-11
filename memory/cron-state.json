@@ -154,8 +154,8 @@
     "last_error": "\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":true,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":402,\"result\":\"API Error: 402 In"
   },
   "write-tweet": {
-    "last_dispatch": "2026-10-11T03:20:14Z",
-    "last_status": "failed",
+    "last_dispatch": "2026-10-11T23:49:08Z",
+    "last_status": "dispatched",
     "last_failed": "2026-10-11T03:20:57Z",
     "total_runs": 11,
     "total_successes": 0,
@@ -165,8 +165,8 @@
     "last_error": "\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":true,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":402,\"result\":\"API Error: 402 In"
   },
   "memory-flush": {
-    "last_dispatch": "2026-10-11T03:20:14Z",
-    "last_status": "failed",
+    "last_dispatch": "2026-10-11T23:49:08Z",
+    "last_status": "dispatched",
     "last_failed": "2026-10-11T03:20:56Z",
     "total_runs": 11,
     "total_successes": 0,
