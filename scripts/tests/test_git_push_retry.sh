@@ -17,7 +17,7 @@ bad() { echo "FAIL - $1"; fail=1; }
 export GIT_AUTHOR_NAME=t GIT_AUTHOR_EMAIL=t@example.com GIT_COMMITTER_NAME=t GIT_COMMITTER_EMAIL=t@example.com
 g() { git "$@"; }
 
-git init -q --bare -b main "$TMP/remote.git"
+git init -q --bare --initial-branch=main "$TMP/remote.git"
 g clone -q "$TMP/remote.git" "$TMP/seed" 2>/dev/null
 (
   cd "$TMP/seed" || exit 1
