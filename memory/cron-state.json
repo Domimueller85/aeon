@@ -66,7 +66,7 @@
     "last_dispatch": "2026-10-14T15:06:37Z"
   },
   "price-alert": {
-    "last_status": "failed",
+    "last_status": "dispatched",
     "last_failed": "2026-10-14T10:08:51Z",
     "total_runs": 35,
     "total_successes": 0,
@@ -74,7 +74,7 @@
     "consecutive_failures": 35,
     "success_rate": 0,
     "last_error": "\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":true,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":402,\"result\":\"API Error: 402 In",
-    "last_dispatch": "2026-10-14T10:08:14Z"
+    "last_dispatch": "2026-10-14T19:19:36Z"
   },
   "digest": {
     "last_status": "failed",
@@ -99,8 +99,8 @@
     "last_error": "\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":true,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":402,\"result\":\"API Error: 402 In"
   },
   "fetch-tweets": {
-    "last_dispatch": "2026-10-13T21:14:57Z",
-    "last_status": "failed",
+    "last_dispatch": "2026-10-14T19:19:36Z",
+    "last_status": "dispatched",
     "last_failed": "2026-10-13T21:15:25Z",
     "total_runs": 16,
     "total_successes": 0,
@@ -110,8 +110,8 @@
     "last_error": ":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":true,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":402,\"result\":\"API Error: 402 Ins"
   },
   "skill-health": {
-    "last_dispatch": "2026-10-13T21:14:57Z",
-    "last_status": "failed",
+    "last_dispatch": "2026-10-14T19:19:36Z",
+    "last_status": "dispatched",
     "last_failed": "2026-10-13T21:15:26Z",
     "total_runs": 15,
     "total_successes": 0,
@@ -132,8 +132,8 @@
     "last_error": "\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":true,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":402,\"result\":\"API Error: 402 In"
   },
   "fleet-control": {
-    "last_dispatch": "2026-10-14T10:08:14Z",
-    "last_status": "failed",
+    "last_dispatch": "2026-10-14T19:19:36Z",
+    "last_status": "dispatched",
     "last_failed": "2026-10-14T10:08:59Z",
     "total_runs": 25,
     "total_successes": 0,
@@ -242,8 +242,8 @@
     "last_error": "\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":true,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":402,\"result\":\"API Error: 402 In"
   },
   "vuln-tracker": {
-    "last_dispatch": "2026-10-13T21:14:57Z",
-    "last_status": "failed",
+    "last_dispatch": "2026-10-14T19:19:36Z",
+    "last_status": "dispatched",
     "last_failed": "2026-10-13T21:15:44Z",
     "total_runs": 15,
     "total_successes": 0,
