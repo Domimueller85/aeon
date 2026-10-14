@@ -66,12 +66,12 @@
     "last_dispatch": "2026-10-13T16:10:58Z"
   },
   "price-alert": {
-    "last_status": "dispatched",
-    "last_failed": "2026-10-13T16:11:42Z",
-    "total_runs": 33,
+    "last_status": "failed",
+    "last_failed": "2026-10-14T00:21:49Z",
+    "total_runs": 34,
     "total_successes": 0,
-    "total_failures": 33,
-    "consecutive_failures": 33,
+    "total_failures": 34,
+    "consecutive_failures": 34,
     "success_rate": 0,
     "last_error": "\":0,\"user\":0,\"system\":0},\"refused\":{\"depth_limit\":0,\"concurrency_limit\":0,\"budget\":0},\"by_type\":{}},\"is_error\":true,\"num_turns\":1,\"subtype\":\"success\",\"api_error_status\":402,\"result\":\"API Error: 402 In",
     "last_dispatch": "2026-10-14T00:21:20Z"
