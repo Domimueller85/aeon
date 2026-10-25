@@ -145,7 +145,7 @@ skills:
   send-email: { enabled: true, schedule: "workflow_dispatch", var: "" } # on-demand — compose + send a 1:1 email to a named recipient via Resend (general sibling of disclosure-emailer). var: "to=… | subject=… | about=…"
   idea-forge: { enabled: true, schedule: "0 9 * * 1", var: "" } # weekly business-idea engine. var: empty/generate=timing-scored wedges | validate[:theme]=viability screen | memo[:theme]=2 evidence-backed memos
   seo-audit: { enabled: false, schedule: "0 13 * * *", var: "" } # daily on-page + technical SEO audit of every page on a site. var: comma-separated origins (empty = no target, no-op). PAGESPEED_API_KEY folds in Core Web Vitals
-  posthog-errors: { enabled: false, schedule: "0 15 * * 1", var: "" } # weekly cross-project PostHog error digest. Needs PostHog MCP connected in the dashboard. var: empty=all projects/7d | Nd window | project-name substrings
+  posthog-errors: { enabled: true, schedule: "0 15 * * 1", var: "" } # weekly cross-project PostHog error digest. Needs PostHog MCP connected in the dashboard. var: empty=all projects/7d | Nd window | project-name substrings
   rightstack: { enabled: true, schedule: "workflow_dispatch", var: "" } # on-demand Web3 stack advisor. var: <build goal> | recommend:<goal> | workflow:<id> | compare:<a>|<b> | explain:<tool> | migrate:<package>. Read-only; pinned to rightstack@0.3.2 schema v1 JSON.
 
   # On-demand (run from the dashboard / `./aeon skills run`; create-prove is also dispatched by the dev-loop chain)
